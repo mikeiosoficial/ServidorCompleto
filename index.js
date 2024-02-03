@@ -43,7 +43,6 @@ const pool = createPool({
   }
 });
 
-
 const localConnection = mysql.createPool({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
@@ -54,6 +53,7 @@ const localConnection = mysql.createPool({
     rejectUnauthorized: true // Habilita SSL/TLS
   }
 });
+
 
 
 app.use((req, res, next) => {
