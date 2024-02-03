@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Logs</title>
+</head>
+<body>
+    <h1>Logs de Atividade</h1>
+    <ul>
+        <% logs.forEach(log => { %>
+            <li>
+                Vendedor: <%= log.vendedor %><br>
+                Ação: <%= log.acao %><br>
+                <%= log.usuario %><br>
+                <%= log.senha %><br>
+                <%= log.validade %><br>
+            </li>
+        <% }); %>
+    </ul>
+</body>
+</html>

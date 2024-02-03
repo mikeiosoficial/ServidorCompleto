@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="usuariosandroid.css">
+  <link rel="icon" type="image/png" href="https://cdn.glitch.global/8de4236d-ba37-4a2a-8722-55c426c37a80/mike.png?v=1699444686909"/>
+    <title>Usuários External</title>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar close" id="sidebar">
+        <a href="#" class="logo">
+            <i class='bx bx-code-alt'></i>
+            <div class="logo-name"><span>MIKE</span>iOS</div>
+        </a>
+        <ul class="side-menu">
+            <li><a href="/dashboard"><i class='bx bx-arrow-back'></i>Voltar</a></li>
+            <li><a href="/registerexternal"><i class='bx bx-user-plus'></i>Registrar Usuário</a></li>
+            <li><a href="/removeexternal"><i class='bx bx-user-minus'></i>Remover Usuário</a></li>
+            <li><a href="/resetexternal"><i class='bx bx-reset'></i>Resetar Usuário</a></li>
+            <li><a href="/add-days-external"><i class='bx bx-calendar-plus'></i>Adicionar dias</a></li>
+            <li class="active"><a href="/usersexternal"><i class='bx bx-group'></i>Ver Usuários</a></li>
+          <% if (user.vendedor_nome === 'adm') { %>
+            <li><a href="/add-admins"><i class='bx bx-user-check'></i>Adicionar Admins</a></li>
+            <li><a href="/credits"><i class='bx bx-coin-stack'></i>Adicionar Créditos</a></li>
+            <li><a href="/admins"><i class='bx bx-user'></i>Ver Admins</a></li>
+            <% } %>
+
+
+        <ul class="side-menu">
+            <li>
+
+            </li>
+        </ul>
+    </div>
+    <!-- End of Sidebar -->
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Navbar -->
+        <nav>
+            <i class='bx bx-menu'></i>
+            <form action="#">
+                <div class="form-input">
+                    
+                    <button style="display: none;"><i></i></button>
+
+                </div>
+            </form>
+            <a href="" class="profile">
+                <img src="https://cdn.glitch.global/8de4236d-ba37-4a2a-8722-55c426c37a80/mike%20(1).png?v=1699444799931">
+              <span id="username"><%= username %></span>
+            </a>
+        </nav>
+
+        <!-- End of Navbar -->
+
+        <main>
+
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+    }
+
+    th, td {
+        text-align: center;
+        padding: 8px;
+        white-space: nowrap;
+    }
+
+    th {
+        
+    }
+
+</style>
+
+</style>
+
+<div class="bottom-data">
+    <div class="orders">
+<div class="header">
+  <i class='bx bx-group'></i>
+  <h3>Usuários</h3>
+
+</div>
+
+        <!-- Seu formulário aqui -->
+        <div class="table-container">
+            <div class="table-responsive">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="text-align: center;">Vendedor</th>
+                            <th style="text-align: center;">Usuário</th>
+                            <th style="text-align: center;">Senha</th>
+                            <th style="text-align: center;">Validade</th>
+                            <th style="text-align: center;">Acesso</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+<% tableContent.forEach((user, index) => { %>
+    <tr style="border-bottom: 1px solid #dcdcdc;">
+        <td style="text-align: center; background-color: transparent; padding: 15px; @media (max-width: 768px) { padding: 10px 0; }">
+            <div style="width: 100%; display: inline-block;">
+                <%= user.vendedor_nome %>
+                <% if (user.vendedor_nome === 'MIKE IOS' || user.vendedor_nome === 'RAFA IOS') { %>
+                    <img src="https://cdn.glitch.global/e8b20081-d609-4e0a-a131-2651471fd7c2/verified_BASELINE_P600_FILL1_wght400_GRAD0_opsz48.svg?v=1701723333961" style="width: 16px; height: 16px; vertical-align: middle; margin-top: -2px;">
+                <% } else if (user.vendedor_nome === 'GRANJEIRO' || user.vendedor_nome === 'FIKELDI') { %>
+                    <img src="https://cdn.glitch.global/e8b20081-d609-4e0a-a131-2651471fd7c2/planomensal.PNG?v=1701908200161" style="width: 16px; height: 16px; vertical-align: middle; margin-top: -2px;">
+                <% } %>
+            </div>
+        </td>
+        <td style="text-align: center; background-color: transparent; width: 20%; padding: 15px; @media (max-width: 768px) { padding: 10px 0; }"><%= user.username %></td>
+        <td style="text-align: center; background-color: transparent; padding: 15px; @media (max-width: 768px) { padding: 10px 0; }"><%= user.password %></td>
+        <td style="text-align: center; background-color: transparent; padding: 15px; @media (max-width: 768px) { padding: 10px 0; }"><%= user.data_expiracao %></td>
+        <td style="text-align: center; background-color: transparent; padding: 15px; @media (max-width: 768px) { padding: 10px 0; }" class="<%= user.uuid === '1/1' ? 'red-text' : '' %>"><%= user.uuid %></td>
+    </tr>
+<% }); %>
+
+
+
+
+
+                    </tbody>
+                </table>
+                
+            </div>
+        </div>
+    </div>
+</div>
+              <br><br>
+
+
+
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+          <script src="reset.js"></script>
+
+</body>
+</html>

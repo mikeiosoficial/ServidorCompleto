@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="dashboard.css">
+  <link rel="icon" type="image/png" href="https://cdn.glitch.global/8de4236d-ba37-4a2a-8722-55c426c37a80/mike.png?v=1699444686909"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Ajustes</title>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="#" class="logo">
+            <i class='bx bx-code-alt'></i>
+            <div class="logo-name"><span>MIKE</span>iOS</div>
+        </a>
+        <ul class="side-menu">
+            <li><a href="/dashboard"><i class='bx bxs-home'></i>Página inicial</a></li>
+            <li><a href="/iphone"><i class='bx bxl-apple'></i>iPhone</a></li>
+            <li><a href="/android"><i class='bx bxl-android'></i>Android</a></li>
+            <li class="active"><a href="/settings"><i class='bx bx-cog'></i>Ajustes</a></li>
+            <li>
+                <a href="/logout" class="logout">
+                    <i class='bx bx-log-out-circle'></i>
+                    Logout
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- End of Sidebar -->
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Navbar -->
+        <nav>
+            <i class='bx bx-menu'></i>
+            <form action="#">
+                <div class="form-input">
+                    
+                    <button style="display: none;"><i></i></button>
+
+                </div>
+            </form>
+            <a href="" class="profile">
+                <img src="https://cdn.glitch.global/8de4236d-ba37-4a2a-8722-55c426c37a80/mike%20(1).png?v=1699444799931">
+              <span id="username"><%= username %></span>
+            </a>
+        </nav>
+
+        <!-- End of Navbar -->
+
+        <main>
+            <div class="header">
+                <div class="left">
+                    <h1>Ajustes</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="#">
+                                Perfil
+                            </a></li>
+                        /
+                        <li><a href="#" class="active">Geral</a></li>
+                    </ul>
+                </div>
+            </div>
+
+<div class="bottom-data">
+    <div class="orders">
+        <div class="header">
+            <i class='bx bx-user'></i>
+            <h3>Perfil</h3>
+        </div>
+        Em breve
+    </div>
+</div>
+
+
+
+      
+    </div>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+          <script src="settings.js"></script>
+
+</body>
+</html>
+
+      

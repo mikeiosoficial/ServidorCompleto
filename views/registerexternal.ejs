@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="registerandroid.css">
+  <link rel="icon" type="image/png" href="https://cdn.glitch.global/8de4236d-ba37-4a2a-8722-55c426c37a80/mike.png?v=1699444686909"/>
+    <title>Registrar usuário</title>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar close" id="sidebar">
+        <a href="#" class="logo">
+            <i class='bx bx-code-alt'></i>
+            <div class="logo-name"><span>MIKE</span>iOS</div>
+        </a>
+        <ul class="side-menu">
+            <li><a href="/dashboard"><i class='bx bx-arrow-back'></i>Voltar</a></li>
+            <li class="active"><a href="/registerexternal"><i class='bx bx-user-plus'></i>Registrar Usuário</a></li>
+            <li><a href="/removeexternal"><i class='bx bx-user-minus'></i>Remover Usuário</a></li>
+            <li><a href="/resetexternal"><i class='bx bx-reset'></i>Resetar Usuário</a></li>
+            <li><a href="/add-days-external"><i class='bx bx-calendar-plus'></i>Adicionar dias</a></li>
+            <li><a href="/usersexternal"><i class='bx bx-group'></i>Ver Usuários</a></li>
+          <% if (user.vendedor_nome === 'adm') { %>
+            <li><a href="/add-admins"><i class='bx bx-user-check'></i>Adicionar Admins</a></li>
+            <li><a href="/credits"><i class='bx bx-coin-stack'></i>Adicionar Créditos</a></li>
+            <li><a href="/admins"><i class='bx bx-user'></i>Ver Admins</a></li>
+            <% } %>
+
+
+        <ul class="side-menu">
+            <li>
+
+            </li>
+        </ul>
+    </div>
+    <!-- End of Sidebar -->
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Navbar -->
+        <nav>
+            <i class='bx bx-menu'></i>
+            <form action="#">
+                <div class="form-input">
+                    
+                    <button style="display: none;"><i></i></button>
+
+                </div>
+            </form>
+            <a href="" class="profile">
+                <img src="https://cdn.glitch.global/8de4236d-ba37-4a2a-8722-55c426c37a80/mike%20(1).png?v=1699444799931">
+              <span id="username"><%= username %></span>
+            </a>
+        </nav>
+
+        <!-- End of Navbar -->
+
+        <main>
+            <div class="header">
+                <div class="left">
+                    <h1>Criar usuário</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="#">
+                                Registrar external
+                            </a></li>
+                        /
+                        <li><a href="#" class="active">Geral</a></li>
+                    </ul>
+                </div>
+            </div>
+
+         <div class="bottom-data" style="margin-bottom: 20px;">
+    <div class="orders">
+        <div class="header">
+            <i class='bx bx-user-plus'></i>
+            <h3>Criar usuário</h3>
+        </div>
+        
+        <!-- Seu formulário aqui -->
+<!-- Seu formulário aqui -->
+<form action="/add_userexternal" method="POST" class="tight-form">
+    <div class="form-group">
+        <label for="username">Nome de Usuário:</label>
+        <input type="text" id="username" name="username" required class="input-text" oninvalid="this.setCustomValidity('Preencha o Usuário')" oninput="this.setCustomValidity('')">
+    </div>
+
+    <div class="form-group">
+        <label for="password">Senha:</label>
+        <input type="password" id="password" name="password" required class="input-text" oninvalid="this.setCustomValidity('Preencha a Senha')" oninput="this.setCustomValidity('')">
+    </div>
+
+
+    <input type="hidden" id="currentDateTime" name="currentDateTime">
+
+    <div class="form-group">
+        <label for="expiration">Validade:</label>
+        <select id="expiration" name="expiration" required>
+            <option value="15">15 Dias</option>
+            <option value="30">30 Dias</option>
+            <option value="365">1 Ano</option>
+            <option value="3650">Permanente</option>
+        </select>
+    </div>
+
+    <div class="button-container">
+        <input type="submit" value="Registrar">
+    </div>
+</form>
+
+        <!-- Fim do formulário -->
+    </div>
+</div>
+
+          
+            <!-- Insights -->
+            <ul class="insights">
+                <li>
+                    <i class='bx bx-coin-stack'></i>
+                    <span class="info">
+                        <h3>
+                            <span id="creditsAmount"><%= creditsAmount %></span>
+                        </h3>
+                        <p>Créditos</p>
+                    </span>
+                </li>
+                </li>
+                </li>
+                    </span>
+                </li>
+            </ul>
+            <!-- End of Insights -->
+   </div>
+</div>
+  
+              <!-- Insights -->
+            <ul class="insights" style='visibility: hidden;'>
+                <li>
+                    <i class='bx bx-coin-stack' style='visibility: hidden;'></i>
+                    <span class="info" style='visibility: hidden;'>
+                        <h3>
+                            .
+                        </h3>
+                    </span>
+                </li>
+                </li>
+                </li>
+                    </span>
+                </li>
+            </ul>
+            <!-- End of Insights -->
+
+
+    
+  <!-- Adicione o script do SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="registerexternal.js"></script>
+</body>
+</html>

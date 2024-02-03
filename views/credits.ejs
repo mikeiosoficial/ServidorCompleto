@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="credits.css">
+  <link rel="icon" type="image/png" href="https://cdn.glitch.global/8de4236d-ba37-4a2a-8722-55c426c37a80/mike.png?v=1699444686909"/>
+    <title>Adicionar créditos</title>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar close" id="sidebar">
+        <a href="#" class="logo">
+            <i class='bx bx-code-alt'></i>
+            <div class="logo-name"><span>MIKE</span>iOS</div>
+        </a>
+         <ul class="side-menu">
+            <li><a href="/dashboard"><i class='bx bx-arrow-back'></i>Voltar</a></li>
+
+
+            <li><a href="/add-admins"><i class='bx bx-user-check'></i>Adicionar Admins</a></li>
+            <li class="active"><a href="/credits"><i class='bx bx-coin-stack'></i>Adicionar Créditos</a></li>
+            <li><a href="/admins"><i class='bx bx-user'></i>Ver Admins</a></li>
+
+          
+
+        <ul class="side-menu">
+            <li>
+
+
+
+<li>
+
+            </li>
+        </ul>
+    </div>
+    <!-- End of Sidebar -->
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Navbar -->
+        <nav>
+            <i class='bx bx-menu'></i>
+            <form action="#">
+                <div class="form-input">
+                    
+                    <button style="display: none;"><i></i></button>
+
+                </div>
+            </form>
+            <a href="" class="profile">
+                <img src="https://cdn.glitch.global/8de4236d-ba37-4a2a-8722-55c426c37a80/mike%20(1).png?v=1699444799931">
+              <span id="username"><%= username %></span>
+            </a>
+        </nav>
+
+        <!-- End of Navbar -->
+
+        <main>
+            <div class="header">
+                <div class="left">
+                    <h1>Créditos</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="">
+                                Créditos
+                            </a></li>
+                        /
+                        <li><a href="" class="active">Geral</a></li>
+                    </ul>
+                </div>
+            </div>
+
+              <div class="bottom-data">
+    <div class="orders">
+        <div class="header">
+            <i class='bx bx-coin-stack'></i>
+            <h3>Créditos</h3>
+        </div>
+        
+
+        <form action="/add_credits" method="POST" class="tight-form" style="margin-bottom: 30px;">
+            <div class="form-group">
+                <label for="addUsername">Nome de Usuário do Vendedor:</label>
+                <input type="text" id="addUsername" name="username" class="input-text" required>
+            </div>
+            <div class="form-group">
+                <label for="addCredits">Quantidade de Créditos:</label>
+                <input type="text" id="addCredits" name="credits" class="input-text" required>
+            </div>
+            <input type="hidden" id="addAction" name="action" value="add">
+            <div class="button-container">
+                <input type="submit" value="Adicionar">
+            </div>
+        </form>
+
+        <!-- Formulário Remover Créditos -->
+        <form action="/remove_credits" method="POST" class="tight-form">
+            <div class="form-group">
+                <label for="removeUsername">Nome de Usuário do Vendedor:</label>
+                <input type="text" id="removeUsername" name="username" class="input-text" required>
+            </div>
+            <div class="form-group">
+                <label for="removeCredits">Quantidade de Créditos:</label>
+                <input type="text" id="removeCredits" name="credits" class="input-text" required>
+            </div>
+            <input type="hidden" id="removeAction" name="action" value="remove">
+            <div class="button-container">
+                <input type="submit" value="Remover">
+            </div>
+        </form>
+    </div>
+</div>
+
+
+      
+    </div>
+</div>
+                
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+          <script src="credits.js"></script>
+
+</body>
+</html>

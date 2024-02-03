@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="dashboard.css">
+  <link rel="icon" type="image/png" href="https://cdn.glitch.global/8de4236d-ba37-4a2a-8722-55c426c37a80/mike.png?v=1699444686909"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Dashboard</title>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="#" class="logo">
+            <i class='bx bx-code-alt'></i>
+            <div class="logo-name"><span>MIKE</span>iOS</div>
+        </a>
+        <ul class="side-menu">
+            <li><a href="/dashboard"><i class='bx bx-arrow-back'></i>Voltar</a></li>
+            <li><a href="/registerandroid"><i class='bx bx-user-plus'></i>Registrar Usuário</a></li>
+            <li><a href="/removeandroid"><i class='bx bx-user-minus'></i>Remover Usuário</a></li>
+            <li><a href="/resetandroid"><i class='bx bx-reset'></i>Resetar Usuário</a></li>
+            <li><a href="/add-daysandroid"><i class='bx bx-calendar-plus'></i>Adicionar dias</a></li>
+            <li><a href="/usersandroid"><i class='bx bx-group'></i>Ver Usuários</a></li>
+          <% if (user.vendedor_nome === 'adm') { %>
+            <li><a href="/add-admins"><i class='bx bx-user-check'></i>Adicionar Admins</a></li>
+            <li><a href="/credits"><i class='bx bx-coin-stack'></i>Adicionar Créditos</a></li>
+            <li><a href="/admins"><i class='bx bx-user'></i>Ver Admins</a></li>
+            <% } %>
+
+
+        <ul class="side-menu">
+           
+
+
+<li>
+
+            </li>
+        </ul>
+    </div>
+    <!-- End of Sidebar -->
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Navbar -->
+        <nav>
+            <i class='bx bx-menu'></i>
+            <form action="#">
+                <div class="form-input">
+                    
+                    <button style="display: none;"><i></i></button>
+
+                </div>
+            </form>
+            <a href="" class="profile">
+                <img src="https://cdn.glitch.global/8de4236d-ba37-4a2a-8722-55c426c37a80/mike%20(1).png?v=1699444799931">
+              <span id="username"><%= username %></span>
+            </a>
+        </nav>
+
+        <!-- End of Navbar -->
+
+        <main>
+            <div class="header">
+                <div class="left">
+                    <h1>Android</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="#">
+                                Análise
+                            </a></li>
+                        /
+                        <li><a href="#" class="active">Geral</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Insights -->
+            <ul class="insights">
+                <li>
+                    <i class='bx bx-coin-stack'></i>
+                    <span class="info">
+                        <h3>
+                            <span id="creditsAmount"><%= creditsAmount %></span>
+                        </h3>
+                        <p>Créditos</p>
+                    </span>
+                </li>
+                <li><i class='bx bx-group'></i>
+                    <span class="info">
+                        <h3>
+                            <span id="numLogins"><%= user.numLogins %></span>
+                        </h3>
+                        <p>Logins criados</p>
+                    </span>
+                </li>
+
+
+                </li>
+                    </span>
+                </li>
+            </ul>
+            <!-- End of Insights -->
+
+            
+            <div class="bottom-data">
+    <div class="orders">
+        <div class="header">
+            <i class='bx bx-time'></i>
+            <h3>Recentes</h3>
+            <i class='bx bx-filter'></i>
+            <i class='bx bx-search'></i>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Usuário</th>
+                    <th style="text-align: center;">Validade</th>
+                    <th style="text-align: right;">Acesso</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% tableContent.forEach(function(user) { %>
+                    <tr>
+                        <td><%= user.username %></td>
+                        <td style="text-align: center; vertical-align: middle;"><%= user.data_expiracao %></td>
+                        <td style="text-align: right; vertical-align: middle;" class="<%= user.uuid === '1/1' ? 'red-text' : '' %>"><%= user.uuid %></td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+</div>
+              
+       <br><br>   
+                <br><br>
+                <br><br>
+    </div>
+</div>
+
+  <br><br>
+
+    <script src="dashboard.js"></script>
+  <!-- Adicione o script do SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+</body>
+
+</html>

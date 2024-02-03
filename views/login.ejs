@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>  
+
+<form action="/login" method="post">
+    <h2>Faça Login</h2>
+    <hr>
+
+    <div class="fundo1">
+        <div class="fundo2">
+            <input style="color: white;" type="text" name="username" id="username" placeholder="Usuário" required="" oninvalid="this.setCustomValidity('Preencha o Usuário')" oninput="this.setCustomValidity('')">
+            <input style="color: white;" type="password" name="password" id="password" placeholder="Senha" required="" oninvalid="this.setCustomValidity('Preencha a Senha')" oninput="this.setCustomValidity('')">
+            <input name="btn" class="btn" type="submit" value="Entrar">
+            <div id="error-message" class="error-message"></div>
+        </div>
+    </div>
+</form>
+
+
+
+      <script src="login.js"></script>
+         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+    const errorMessageContainer = document.getElementById('error-message');
+    const loginMessage = '<%= loginMessage || "" %>';
+
+    if (loginMessage) {
+        errorMessageContainer.innerText = loginMessage;
+        errorMessageContainer.style.color = 'red';
+        errorMessageContainer.style.marginTop = '0px'; // Ajuste conforme necessário
+    }
+});
+
+function validateForm() {
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    const errorMessage = document.getElementById('error-message');
+
+    if (username === '' || password === '') {
+        errorMessage.innerText = 'Preencha todos os campos.';
+        errorMessage.style.color = 'red';
+        return false;
+    } else {
+        errorMessage.innerText = '';
+        // Após a validação, chame a função para fazer a solicitação POST
+        makePostRequest();
+        return true;
+    }
+}
+         
+      
+      
+      function showMessage() {
+        // Mostra a mensagem sobre o botão "Registrar"
+        const registrationMessage = document.getElementById('registrationMessage');
+        registrationMessage.style.display = 'block';
+    }
+    
+    
+    </script>
+   </body>
+</html>
