@@ -33,10 +33,10 @@ app.use(bodyParser.json());
 let serverStatus = null;
 
 const pool = createPool({
-  host: 'us-east.connect.psdb.cloud', // Defina o host do banco de dados
-  user: '9y99ln1oowrz5dbop7qn', // Defina o usuário do banco de dados
-  password: 'pscale_pw_cbv0DKl6BKt3p67MmyGoKxfo2oFttjnjHTozeQ2Xwh3', // Defina a senha do banco de dados
-  database: 'mikeregedit', // Defina o nome do banco de dados
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_DATABASE,
   connectionLimit: 15,
   ssl: {
     rejectUnauthorized: true // Habilita SSL/TLS
@@ -44,16 +44,15 @@ const pool = createPool({
 });
 
 const localConnection = mysql.createPool({
-  host: 'us-east.connect.psdb.cloud', // Defina o host do banco de dados
-  user: '9y99ln1oowrz5dbop7qn', // Defina o usuário do banco de dados
-  password: 'pscale_pw_cbv0DKl6BKt3p67MmyGoKxfo2oFttjnjHTozeQ2Xwh3', // Defina a senha do banco de dados
-  database: 'mikeregedit', // Defina o nome do banco de dados
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_DATABASE,
   connectionLimit: 15,
   ssl: {
     rejectUnauthorized: true // Habilita SSL/TLS
   }
 });
-
 
 
 
